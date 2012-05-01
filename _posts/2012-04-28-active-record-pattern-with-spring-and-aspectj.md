@@ -39,7 +39,7 @@ It's nothing but a simple bean. Next we write the first test for our active reco
 	    }
 	}
 
-It should complain that the method findAll() is undefined for the type User. Let's fix the compilation errors before we do any real implementation. Let's create a UserPersistence aspect that enriches the User class with the static method.</p>
+It should complain that the method findAll() is undefined for the type User. Let's fix the compilation errors before we do any real implementation. Let's create a UserPersistence aspect that enriches the User class with the static method.
 
 	public aspect UserPersistence {
 

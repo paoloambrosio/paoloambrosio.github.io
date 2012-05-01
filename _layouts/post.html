@@ -3,8 +3,11 @@ layout: default
 ---
 <h2>{{ page.title}}</h2>
 <p>
-	{{ page.date | date_to_long_string }}.
-	{% unless page.tags == empty %}Tags: {{ page.tags | array_to_sentence_string }}{% endunless %}
+{{ page.date | date_to_long_string }}.
+{% unless page.tags == empty %}Tags:
+	{% for tag in page.tags %}
+		<a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>{% case forloop.rindex %}{% when 1 %}.{% when 2 %} and {% else %},{% endcase %} 
+	{% endfor %}
+{% endunless %}
 </p>
 {{ content }}
-
