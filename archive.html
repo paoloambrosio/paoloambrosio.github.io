@@ -1,0 +1,17 @@
+---
+layout: default
+title: Archive
+---
+<h2>Post Archive</h2>
+<p>
+{% if site.posts == empty %}
+<p>There are no posts.</p>
+{% else %}
+<ul>
+{% for post in site.posts %}
+	<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></p></li>
+{% endfor %}
+</ul>
+{% endif %}
+</p>
+

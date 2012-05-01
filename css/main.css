@@ -1,0 +1,59 @@
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.footer {
+	border-top: 1px solid #E5E5E5;
+	margin-top: 45px;
+	padding: 35px 0 36px;
+}
+
+.pre-font {
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+h2, h3 {
+	padding: 0.5em 0em;
+}
+
+h2 a {
+	color: black;
+}
+
+
+/* Projects Page */
+
+.projects-page h3 {
+	margin-left: 130px;
+	font-size: 2em;
+	height: 1em;
+	font-variant: small-caps;
+}
+
+.projects-page h3 img {
+	height: 80%;
+}
+
+/* About Page */
+
+.about-page h3 {
+	margin-left: 170px;
+}
+
+.about-page h4 {
+	margin-left: 170px;
+}
+
+.about-page .dl-horizontal dt {
+	width: 160px;
+	font-weight: normal;
+}
+
+.about-page .dl-horizontal dd {
+	margin-left: 170px;
+	padding: 0em 0em 0.5em 0em;
+}
+
+.about-page p:first-child {
+	padding: 0.5em 0em 0em 0em;
+}

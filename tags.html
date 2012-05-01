@@ -1,0 +1,20 @@
+---
+layout: default
+title: Archive
+---
+<h2>Tags</h2>
+<p>
+{% if site.tags == empty %}
+<p>There are no tags.</p>
+{% else %}
+{% for tag in site.tags %}
+<h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
+<ul>	
+{% for post in tag[1] %}
+	<li>{{ post.date | date_to_string }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></p></li>
+{% endfor %}
+</ul>
+{% endfor %}
+{% endif %}
+</p>
+
