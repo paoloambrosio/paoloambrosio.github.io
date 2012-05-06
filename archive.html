@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: with-sidebar
 title: Archive
 ---
-<h2>Post Archive</h2>
-<p>
+<h2>All blog posts</h2>
 {% if site.posts == empty %}
 <p>There are no posts.</p>
 {% else %}
@@ -13,5 +12,4 @@ title: Archive
 {% endfor %}
 </ul>
 {% endif %}
-</p>
 

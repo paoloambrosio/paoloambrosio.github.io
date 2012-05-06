@@ -1,5 +1,12 @@
 <p class="pull-right"><a href="#">Back to top</a></p>
-<p>&copy; 2012 Paolo Ambrosio</p>
+<p>
+&copy; 2012 Paolo Ambrosio.
+</p>
+<p>
+Code licensed under the <a href="http://www.opensource.org/licenses/MIT">MIT License</a>,
+everything else under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>
+unless otherwise specified.
+</p>
 <p>
 Powered by <a href="https://github.com/mojombo/jekyll/" target="_blank">Jekyll</a>.
 Theme built on Twitter's <a href="http://getbootstrap.com/" target="_blank">Bootstrap toolkit</a>.

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: with-sidebar
 title: Home Page
 ---
 <ul class="unstyled">
@@ -16,11 +16,8 @@ title: Home Page
 		</p>
 		<!-- Post excerpt code by Mateusz Uzdowski http://mateusz.uzdowski.pl/ -->
 		{% if post.more %}{% assign more = post.more %}{% else %}{% assign more = 2 %}{% endif %}
-		{% for paragraph in post.content %}
-			{% if forloop.index0 <= more %}{{ paragraph }}{% endif %}
-		{% endfor %}
+		{% for paragraph in post.content %}{% if forloop.index0 <= more %}{{ paragraph }}{% endif %}{% endfor %}
 		<p><a href="{{ post.url }}">Keep reading...</a></p>
 	</li>
 {% endfor %}
 </ul>
-
