@@ -21,8 +21,8 @@ h2 a {
 
 .projects-page h3 {
 	font-size: 2em;
-	height: 1em;
 	font-variant: small-caps;
+	padding-bottom: 0;
 }
 
 @media (min-width: 768px) {
