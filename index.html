@@ -3,7 +3,7 @@ layout: with-sidebar
 title: Home Page
 ---
 <ul class="unstyled">
-{% for post in site.posts %}
+{% for post in site.posts limit:10 %}
 	<li>
 		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 		<p>
@@ -14,10 +14,10 @@ title: Home Page
 			{% endfor %}
 		{% endunless %}
 		</p>
-		<!-- Post excerpt code by Mateusz Uzdowski http://mateusz.uzdowski.pl/ -->
-		{% if post.more %}{% assign more = post.more %}{% else %}{% assign more = 2 %}{% endif %}
-		{% for paragraph in post.content %}{% if forloop.index0 <= more %}{{ paragraph }}{% endif %}{% endfor %}
-		<p><a href="{{ post.url }}">Keep reading...</a></p>
+		{{ post.content | split:'<!--break-->' | first }}
+		{% if post.content contains '<!--break-->' %}
+			<p><a href="{{ post.url }}">Keep reading...</a></p>
+		{% endif %}
 	</li>
 {% endfor %}
 </ul>

@@ -5,6 +5,8 @@ tags: [Ubuntu]
 ---
 A few days ago I downloaded the last release of [Guitar Pro 6](http://www.guitar-pro.com/) for Linux. What first annoyed me was that there is no package for 64 architectures. Yes, you read it correctly, it's 2013 and Arobas Music still thinks that it is acceptable to provide [32-bit software only](http://www.guitar-pro.com/en/index.php?pg=support-frequent-asked-questions&faq=tech#Q19). I thought no company could to be hit by the [Unix 2038 problem](http://en.wikipedia.org/wiki/Year_2038_problem), but now it looks like we have a candidate!
 
+<!--break-->
+
 Tried to install the package anyway, confident that Ubuntu would do a good job installing the required 32-bit library dependencies. Unfortunately Guitar Pro 6 lists gksu among the dependencies, and that cannot be installed along with the 64-bit version already in the system.
 
 ![Cannot install gksu:i386](/img/posts/gp6-cannot-install-gkgu.png)

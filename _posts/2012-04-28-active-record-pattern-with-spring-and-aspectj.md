@@ -7,6 +7,8 @@ By looking at [Spring Roo](http://www.springsource.org/spring-roo) I was amazed 
 
 In this short tutorial I am going to explain how to do it without Roo. The complete source code can be found in this Gist: [https://gist.github.com/2500752](https://gist.github.com/2500752). The three commits reflect the development stages.
 
+<!--break-->
+
 Let's start by defining a basic domain model:
 
 	public class User {
