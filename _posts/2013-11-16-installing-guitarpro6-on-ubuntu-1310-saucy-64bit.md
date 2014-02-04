@@ -40,7 +40,7 @@ Thanks to a [blog post in the Fedora forums](http://forums.fedora-fr.org/viewtop
 
 	sudo apt-get install gtk2-engines:i386
 
-At this point the only problem is a wierd message window at startup: "gp build with Qt : 4.6.3 and run with Qt : 4.6.2." I have already done far too much to be able to run this software, so I'll have to live with it.
+At this point the only problem is a weird message window at startup: "gp build with Qt : 4.6.3 and run with Qt : 4.6.2." I have already done far too much to be able to run this software, so I'll have to live with it.
 
 Don't get me wrong: I am extremely grateful to Arobas Music for providing a Linux build of their software. What annoys me is that with very little effort they could improve a lot the user experience.
 
