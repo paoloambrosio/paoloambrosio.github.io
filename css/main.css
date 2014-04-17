@@ -35,30 +35,6 @@ h2 a {
 	height: 80%;
 }
 
-/* About Page */
-
-.cv-layout h3 {
-	margin-left: 170px;
-}
-
-.cv-layout h4 {
-	margin-left: 170px;
-}
-
-.cv-layout .dl-horizontal dt {
-	width: 160px;
-	font-weight: normal;
-}
-
-.cv-layout .dl-horizontal dd {
-	margin-left: 170px;
-	padding: 0em 0em 0.5em 0em;
-}
-
-.cv-layout p:first-child {
-	padding: 0.5em 0em 0em 0em;
-}
-
 /* Hide sidebar on small screens */
 
 @media (max-width: 720px) {
