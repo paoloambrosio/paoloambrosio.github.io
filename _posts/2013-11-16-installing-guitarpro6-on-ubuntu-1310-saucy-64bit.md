@@ -23,9 +23,9 @@ Decided then to drop the script and do it manually:
 
 	dpkg-deb -x gp6-full-linux-r11553.deb gp6-tmp
 	dpkg-deb --control gp6-full-linux-r11553.deb gp6-tmp/DEBIAN
-	vi gp6-tmp/control # rename GuitarPro6 to guitarpro6, remove gksu dependency
+	vi gp6-tmp/DEBIAN/control # rename GuitarPro6 to guitarpro6, remove gksu dependency
 	rm gp6-tmp/.DS_Store gp6-tmp/._.DS_Store
-	dpkg -b gp6-tmp gp6-full-linux-r11553-tastethedifference.deb
+	fakeroot dpkg -b gp6-tmp gp6-full-linux-r11553-tastethedifference.deb
 
 Finally I had a package that was of decent quality, so I was able to install, run and register the software. Then of course the next thing I did was to run the updater. The update went all right, and I started the software again only to find out that something else went wrong:
 
@@ -44,3 +44,4 @@ At this point the only problem is a weird message window at startup: "gp build w
 
 Don't get me wrong: I am extremely grateful to Arobas Music for providing a Linux build of their software. What annoys me is that with very little effort they could improve a lot the user experience.
 
+**UPDATE**: Tested and working with r11621 on Ubuntu 14.04 Trusty. I don't get the Qt error at startup anymore.
