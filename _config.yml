@@ -1,6 +1,4 @@
 source:      .
 destination: ./_site
-
-pygments:    false
-markdown: kramdown
-
+highlighter: null
+markdown:    redcarpet
