@@ -2,6 +2,7 @@
 layout: post
 title: "Active Record pattern with Spring and AspectJ"
 tags: [AspectJ, Java, Persistence, Spring]
+comments: true
 ---
 By looking at [Spring Roo](http://www.springsource.org/spring-roo) I was amazed by how they implemented the Active Record pattern on top of JPA. It uses the Spring Framework (of course!) and AspectJ to decorate the domain objects with JPA annotations and add the necessary methods to deal with persistence. Despite this, I don't like the automagically generated code from the command line.
 

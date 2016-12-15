@@ -2,6 +2,7 @@
 layout: post
 title: "Location Transparency with Akka"
 tags: [Akka, Scala, Kubernetes, Docker]
+comments: true
 ---
 In this post I am going to talk about one of my favourite features of the [Akka toolkit](http://akka.io/): [Location Tranparency](http://doc.akka.io/docs/akka/2.4/general/remoting.html#remoting).
 

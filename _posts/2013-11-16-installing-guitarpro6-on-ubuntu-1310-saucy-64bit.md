@@ -2,6 +2,7 @@
 layout: post
 title: "Installing Guitar Pro 6 on Ubuntu 13.10 Saucy 64-bit"
 tags: [Ubuntu]
+comments: true
 ---
 A few days ago I downloaded the latest release of [Guitar Pro 6](http://www.guitar-pro.com/) for Linux. What first annoyed me was that there is no package for 64 architectures. Yes, you read it correctly, it's 2013 and Arobas Music still thinks that it is acceptable to provide [32-bit software only](http://www.guitar-pro.com/en/index.php?pg=support-frequent-asked-questions&faq=tech#Q19).
 

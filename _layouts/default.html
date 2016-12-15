@@ -43,25 +43,16 @@
 	<div class="container">
 		{{ content }}
 
-		{% if page.comments %}
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-		    var disqus_shortname = 'paoloambrosio';
-
-		    (function() {
-		        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		    })();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		{% endif %}
+		{% include comments %}
 
 		<footer class="footer">
 			{% include footer %}
 		</footer>
 
 	</div> <!-- /container -->
+
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/js/jquery-1.7.2.min.js"></script>
 
 	<script src="/js/bootstrap.min.js"></script>
 
