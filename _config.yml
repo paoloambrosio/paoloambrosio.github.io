@@ -1,4 +1,1 @@
-source:      .
 destination: ./_site
-highlighter: null
-markdown:    redcarpet

@@ -21,24 +21,32 @@ I could have fixed the package name with the previous script, but further checks
 
 Decided then to drop the script and do it manually:
 
-	dpkg-deb -x gp6-full-linux-r11553.deb gp6-tmp
-	dpkg-deb --control gp6-full-linux-r11553.deb gp6-tmp/DEBIAN
-	vi gp6-tmp/DEBIAN/control # rename GuitarPro6 to guitarpro6, remove gksu dependency
-	rm gp6-tmp/.DS_Store gp6-tmp/._.DS_Store
-	fakeroot dpkg -b gp6-tmp gp6-full-linux-r11553-tastethedifference.deb
+```sh
+dpkg-deb -x gp6-full-linux-r11553.deb gp6-tmp
+dpkg-deb --control gp6-full-linux-r11553.deb gp6-tmp/DEBIAN
+vi gp6-tmp/DEBIAN/control # rename GuitarPro6 to guitarpro6, remove gksu dependency
+rm gp6-tmp/.DS_Store gp6-tmp/._.DS_Store
+fakeroot dpkg -b gp6-tmp gp6-full-linux-r11553-tastethedifference.deb
+```
 
 Finally I had a package that was of decent quality, so I was able to install, run and register the software. Then of course the next thing I did was to run the updater. The update went all right, and I started the software again only to find out that something else went wrong:
 
-	./GuitarPro: /opt/GuitarPro6/./libz.so.1: version `ZLIB_1.2.3.3' not found (required by /usr/lib/i386-linux-gnu/libxml2.so.2)
+```
+./GuitarPro: /opt/GuitarPro6/./libz.so.1: version `ZLIB_1.2.3.3' not found (required by /usr/lib/i386-linux-gnu/libxml2.so.2)
+```
 
 This was easy to fix by renaming libz.so.1 to libz.so.1.orig, but then on the next run it stopped with a white translucent window and crashed after a few seconds:
 
-	QGtkStyle was unable to detect the current GTK+ theme.
-	Segmentation fault (core dumped)
+```
+QGtkStyle was unable to detect the current GTK+ theme.
+Segmentation fault (core dumped)
+```
 
 Thanks to a [blog post in the Fedora forums](http://forums.fedora-fr.org/viewtopic.php?pid=525293), I was able to identify the package to install and fix this final issue by executing
 
-	sudo apt-get install gtk2-engines:i386
+```sh
+sudo apt-get install gtk2-engines:i386
+```
 
 At this point the only problem is a weird message window at startup: "gp build with Qt : 4.6.3 and run with Qt : 4.6.2." I have already done far too much to be able to run this software, so I'll have to live with it.
 

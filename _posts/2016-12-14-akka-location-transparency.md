@@ -91,7 +91,7 @@ The Docker container is simply created by a combination of `JavaAppPackaging` an
 
 We can test the application locally by running it from SBT (each command on a separate terminal)
 
-```
+```shell_session
 1$ sbt frontend/run
 2$ curl http://localhost:9000/greet/World
 {"message":"Hello, World"}
@@ -99,7 +99,7 @@ We can test the application locally by running it from SBT (each command on a se
 
 or we can deploy it on a local Kubernetes cluster using [Minikube](https://github.com/kubernetes/minikube).
 
-```
+```shell_session
 $ eval $(minikube docker-env)
 $ sbt docker:publishLocal
 $ kubectl create -f kubernetes/
@@ -109,7 +109,7 @@ $ curl $(minikube service frontend-service --url)/greet/World
 
 Of course we can also scale nodes like we would do for any service deployed in Kubernetes.
 
-```
+```shell_session
 $ kubectl scale --replicas=3 deployment/frontend-deployment
 $ curl $(minikube service frontend-service --url)/greet/World
 {"message":"Hello, World"}
@@ -181,7 +181,7 @@ object BackendApp extends App {
 
 We can now run the following commands on different terminals to see it in action:
 
-```
+```shell_session
 1$ REMOTE_PORT=2551 sbt backend/run
 2$ REMOTE_PORT=2552 sbt backend/run
 3$ REMOTE_PORT=2553 sbt frontend/run \
@@ -206,7 +206,7 @@ object FrontendApp extends App with BackendPathsConfig
 
 After those changes we can pass the backend nodes as an environment variable
 
-```
+```shell_session
 1$ REMOTE_PORT=2551 sbt backend/run
 2$ REMOTE_PORT=2552 sbt backend/run
 3$ REMOTE_PORT=2553 BACKEND_NODES=127.0.0.1:2551,127.0.0.1:2552 sbt frontend/run
@@ -272,7 +272,7 @@ trait ExampleApp extends ClusterSeedNodesConfig {
 
 Again we can run it manually
 
-```
+```shell_session
 1$ REMOTE_PORT=2551 sbt backend/run
 2$ REMOTE_PORT=2552 CLUSTER_SEEDS=127.0.0.1:2551 sbt backend/run
 3$ REMOTE_PORT=2553 CLUSTER_SEEDS=127.0.0.1:2551,127.0.0.1:2552 sbt frontend/run
@@ -282,7 +282,7 @@ Again we can run it manually
 
 or on Kubernetes
 
-```
+```shell_session
 $ eval $(minikube docker-env)
 $ sbt docker:publishLocal
 $ kubectl create -f kubernetes/cluster-service.yaml
@@ -295,7 +295,7 @@ $ curl $(minikube service frontend-service --url)/greet/World
 
 If we look at the logs for each node of the cluster, we can see that the backend node comes up first, can't find any other node and decides to elect itself as the leader. The frontend node starts later and contacts the backend node to join the cluster.
 
-```
+```shell_session
 $ for p in $(kubectl get pods -o name --sort-by='metadata.creationTimestamp'); do
 >   echo "*** $p ***"
 >   kubectl logs $p | grep 'Cluster Node' | cut -d ' ' -f 2,3,9-
@@ -317,7 +317,7 @@ $ for p in $(kubectl get pods -o name --sort-by='metadata.creationTimestamp'); d
 
 Let's see what happens now when we scale the backend deployment. The second backend node comes up and contacts the first backend node to join the cluster, just like the frontend node did.
 
-```
+```shell_session
 $ kubectl scale --replicas=2 deployment/backend-deployment
 deployment "backend-deployment" scaled
 $ for p in $(kubectl get pods -o name --sort-by='metadata.creationTimestamp'); do
@@ -339,7 +339,7 @@ $ for p in $(kubectl get pods -o name --sort-by='metadata.creationTimestamp'); d
 
 If we now issue a couple of requests to our REST API, we can see that the frontend node has realised that a second backend node has joined the cluster and has started routing traffic to it using a round-robin algorithm.
 
-```
+```shell_session
 $ curl $(minikube service frontend-service --url)/greet/World
 $ curl $(minikube service frontend-service --url)/greet/World
 $ for p in $(kubectl get pods -o name --sort-by='metadata.creationTimestamp'); do
